@@ -1,0 +1,31 @@
+{
+    "status": "0",
+    "msg": "ok",
+    "result": [
+        {
+            "caipiaoid": "1",
+            "name": "福利彩票",
+            "parentid": "0"
+        },
+        {
+            "caipiaoid": "2",
+            "name": "体育彩票",
+            "parentid": "0"
+        }
+        {
+            "caipiaoid": "11",
+            "name": "双色球",
+            "parentid": "1"
+        },
+        {
+            "caipiaoid": "12",
+            "name": "福彩3D",
+            "parentid": "1"
+        },
+        {
+            "caipiaoid": "13",
+            "name": "七乐彩",
+            "parentid": "1"
+        }
+    ]
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/template-native.js"></script>
+    <style>
+        table {
+            width: 600px;
+            border-collapse: collapse;
+        }
+        
+        td {
+            height: 40px;
+            text-align: center;
+            border: 1px solid #CCC;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="width: 100px">
+        <a href="01chat.html">机器人</a>
+        <a href="04cheaktep.html">星座</a>
+        <a href="233.html">彩票查询</a>
+        <a href="wechat.html">聊天室</a>
+    </div>
+    <input type="text" id="startStation" placeholder="请输入起点">
+    <input type="text" id="endStation" placeholder="请输入终点"> 只看高铁:
+    <input type="checkbox" id="isState" val="true">
+    <input type="button" value="查询">
+    <br><br>
+    <table>
+        <thead>
+
+            <tr>
+                <td>车次</td>
+                <td>
+                    出发站 <br> 到达站
+                </td>
+                <td>
+                    出发时间<br> 到达时间
+                </td>
+                <td>历时</td>
+                <td>商务座票价</td>
+                <td>特等座票价</td>
+                <td>一等座票价</td>
+                <td>二等座票价</td>
+                <td>高级 软卧
+                </td>
+                <td>软卧</td>
+                <td>备注</td>
+            </tr>
+
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <!--在模版里面解析数据,使用语法-->
+    <script type="text/template" id="templateId">
+        <%for(var i=0;i<result.length;i++){%>
+            <tr>
+                <td>
+                    <%=result[i].trainno%>
+                </td>
+                <td>
+                    <%=result[i].station%><br>
+                        <%=result[i].endstation%>
+                </td>
+                <td>
+                    <%=result[i].departuretime%><br>
+                        <%=result[i].arrivaltime%>
+                </td>
+                <td>
+                    <%=result[i].costtime%>
+                </td>
+                <td>
+                    <%=result[i].pricesw%>
+                </td>
+                <td>
+                    <%=result[i].pricetd%>
+                </td>
+                <td>
+                    <%=result[i].priceyd%>
+                </td>
+                <td>
+                    <%=result[i].priceed%>
+                </td>
+                <td>
+                    <%=result[i].pricegr1%>
+                </td>
+                <td>
+                    <%=result[i].pricerw1%>
+                </td>
+                <td><input type="button" value="预定"></td>
+            </tr>
+            <%}%>
+    </script>
+    <script>
+        $(function() {
+            $("input[type=button]").on("click", function() {
+                var ststation = $("#startStation").val();
+                var endstation = $("#endStation").val();
+
+                var isStation = $("#isState").prop("checked");
+
+                if (isStation) {
+                    isStation = 1;
+                } else {
+                    isStation = 0;
+                }
+
+
+                $.ajax({
+                    url: "http://api.jisuapi.com/train/station2s",
+                    type: "get",
+                    data: {
+                        appkey: "6b35181f1b2bc793",
+                        start: ststation,
+                        end: endstation,
+                        ishigh: isStation
+                    },
+                    dataType: "jsonp",
+                    success: function(data) {
+                        console.log(data);
+                        var html = template("templateId", data);
+                        $("tbody").html(html);
+                    }
+                });
+
+
+
+            })
+
+
+
+
+
+
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>

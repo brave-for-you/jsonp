@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 800px;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+            margin: 80px auto;
+            box-shadow: 0 0 10px pink;
+        }
+        td{
+            padding: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+            background-color: #fff;
+        }
+        #btn{
+            box-shadow: 0 0 2px 5px pink;
+        }
+        .one{
+            width: 600px;
+            margin: 80px auto;
+        }
+        #ps h3{
+            font-size: 18px;
+            color: deepskyblue;
+            font-family: "微软雅黑";
+        }
+        #ps p{
+            font-size: 16px;
+            line-height: 28px;
+            color: black;
+            font-family: "微软雅黑";
+        }
+    </style>
+    <script src="js/jquery-1.12.2.min.js"></script>
+    <script src="js/template-native.js"></script>
+</head>
+<body>
+<div class="one">
+    <input type="text" value="请输入星座id" id="txt1"/>
+    <input type="button" value="星座运势查询" id="btn2"/>
+    <div id="ps"></div>
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <td>id</td>
+            <td>名称</td>
+            <td>日期</td>
+            <td>照片</td>
+        </tr>
+    </thead>
+   <tbody>
+
+   </tbody>
+</table>
+
+<script type="text/template" id="tem">
+<% for(var i=0;i<result.length;i++){　%>
+    <tr>
+
+        <td><%= result[i].astroid%></td>
+            <td><%= result[i].astroname%></td>
+            <td><%= result[i].date%></td>
+            <td><img src="<%= result[i].pic %>" alt=""></td>
+    </tr>
+<% } %>
+</script>
+
+<script type="text/template" id="tems">
+
+    <h3>星座：</h3><p><%= result.astroname%></p>
+     <h3>今日运势：</h3><p><%= result.today.presummary%></p>
+     <h3>明日运势：</h3><p><%= result.tomorrow.presummary%></p>
+     <h3>贵人星座：</h3><p><%= result.today.star%></p>
+     <h3>今年运势：</h3><p><%= result.year.summary%></p>
+     <h3>本月运势：</h3><p><%= result.month.summary%></p>
+</script>
+
+<script>
+    $(function () {
+
+        $.ajax({
+                url:"http://api.jisuapi.com/astro/all",
+                type:"get",
+                data:{
+                    appkey:"21a8910d33317b41"
+                },
+                dataType:"jsonp",
+                success:function (data) {
+
+                    var html=template("tem",data);
+                    $("tbody").html(html);
+                }
+            });
+
+        $("#txt1").focus(function () {
+           $(this).val("");
+        });
+        $("#btn2").click(function () {
+            rems();
+        });
+        $(window).keyup(function (e) {
+            if(e.keyCode==13)
+            {
+                rems();
+            }
+
+        })
+        function rems() {
+
+            var txt=$("#txt1").val();
+
+            $.ajax({
+                url: "http://api.jisuapi.com/astro/fortune",
+                post:"get",
+                dataType:"jsonp",
+                data:{
+                    appkey:"21a8910d33317b41",
+                    astroid:txt,
+                },
+                success:function(data) {
+
+                    var ht=template("tems",data);
+                    $("#ps").html(ht);
+                    console.log(ht);
+
+                }
+
+
+            });
+
+        }
+    });
+</script>
+
+</body>
+</html>
