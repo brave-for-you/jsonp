@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>博慧斯数据管理平台</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-table.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+<header>
+    <h1><a href="#">博慧斯</a></h1>
+    <ul class="menu">
+        <li><a href="index.html"><div class="menu-1"></div>
+            <br/>首页</a></li>
+        <li><a href="dataAna.html"><div class="menu-2"></div>
+            <br/>数据分析</a></li>
+        <li><a href="misMap.html"><div class="menu-3"></div>
+            <br/>糖化中国</a></li>
+        <li class="ck"><a href="#"><div class="menu-4"></div>
+            <br/>录入信息</a></li>
+    </ul>
+    <ul class="login">
+        <li><a href="#"><img src="images/login-01.png" alt="">&nbsp;管理员登录&nbsp;</a></li>
+        <li><a href="#"><img src="images/login-02.png" alt="">&nbsp;退出&nbsp;</a></li>
+    </ul>
+</header>
+<div class="main">
+    <h3>信息列表: </h3>
+    <div class="box">
+        <a href="#" class="btn btn-primary" data-toggle='modal' data-target='#clickId'>录入信息</a>
+        <br><br>
+        <table id="msiId"></table>
+    </div>
+    <div class=" modal fade" id="clickId" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background: #2684cc; color: white;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="false">&times;</span></button>
+                    <h4 class="modal-title">录入信息</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="formId">
+                        <div class="form-group">
+                            <!--<label for="">姓名:</label>-->
+                            <input type="text" class="" name="name" placeholder="请输入姓名"/>
+                            <!--<label for="">性别:</label>-->
+                            <!--<input type="text" class="" name="" placeholder="请输入性别"/>-->
+                        </div>
+                        <div class="form-group">
+                            <!--<label for="">年龄:</label>-->
+                            <input type="text" class="" name="birthday_year" placeholder="请输入年龄"/>
+                            <!--<label for="">身高:</label>-->
+                            <input type="text" class="" name="height" placeholder="请输入身高"/>
+                        </div>
+                        <div class="form-group">
+                            <!--<label for="">体重:</label>-->
+                            <input type="text" class="" name="weight" placeholder="请输入体重"/>
+                            <!--<label for="">电话:</label>-->
+                            <input type="text" class="" name="mobile" placeholder="请输入联系方式"/>
+                        </div>
+                        <div class="form-group">
+                            <!--<label for="">糖尿病类型:</label>-->
+                            <input type="text" class="" name="glucos_value" placeholder="请输入血糖检测值"/>
+                            <!--<label for="">仪器编号:</label>-->
+                            <input type="text" class="" name="a1c_value" placeholder="请输入糖化检测值"/>
+                        </div>
+                        <div class="form-group">
+                            <!--<label for="">糖尿病类型:</label>-->
+                            <input type="text" class="" name="diabetes_id" placeholder="请输入糖尿病类型"/>
+                            <!--<label for="">仪器编号:</label>-->
+                            <input type="text" class="" name="meter_id" placeholder="请输入仪器编号"/>
+                        </div>
+                        <div class="form-group">
+                            <!--<label for="">服务人员:</label>-->
+                            <input type="text" class="" name="doctor" placeholder="请输入服务人员"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="button_closeId">关闭</button>
+                    <button type="button" class="btn btn-primary" id="button_saveId">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="lib/bootstrap/js/jquery-1.12.4.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="lib/bootstrap/js/bootstrap-table.js"></script>
+<script src="lib/bootstrap/js/bootstrap-table-zh-CN.js"></script>
+<script src="js/savePage.js"></script>
+</body>
+
+</html>
