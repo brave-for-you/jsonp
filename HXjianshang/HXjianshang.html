@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!-- 网页编码-->
+    <meta charset="utf-8">
+    <!-- 如果是 IE浏览器 使用 最新的引擎来渲染页面 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--视口约束-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>保利西江月-户型</title>
+    <!-- CSS 外联 -->
+	<link rel="icon" type="image/ico" href="http://www.alphavisual.cn/favicon.ico" />
+
+    <link rel="stylesheet" href="http://www.alphavisual.cn/xjy/lib/css/swiper.min.css" />
+    <link rel="stylesheet" href="http://www.alphavisual.cn/xjy/lib/css/bootstrap.min.css" />
+    <!-- 以下两个文件 为了让ie9 以下的浏览器 支持 html5新标签和 css3的媒体查询 -->
+    <!--[if lt IE 9]>
+    <script src="http://www.alphavisual.cn/xjy/lib/html5shiv/html5shiv.min.js"></script>
+    <script src="http://www.alphavisual.cn/xjy/lib/respond/respond.js"></script>
+    <![endif]-->
+    <!-- JS 外联 -->
+    <script src="http://www.alphavisual.cn/xjy/lib/js/jquery-1.11.2.min.js"></script>
+    <script src="http://www.alphavisual.cn/xjy/lib/js/swiper.min.js"></script>
+    <script src="http://www.alphavisual.cn/xjy/lib/js/bootstrap.min.js"></script>
+    <style>
+	*{padding: 0; margin: 0; border: 0;}
+	html, body {position: relative; width:100%;height: 100%;max-width: 640px;max-height: 1008px;margin: 0 auto; box-shadow: 0 0 70px #000;}
+	ul{list-style:none;margin: 0px;}
+        .introduce {width: 100%;height: 100%;overflow: hidden;background-image: url("img/bgimg.png");background-size: 100% 100%;background-repeat: no-repeat;}
+        .swiper-container{width: 100%;height: 40%;margin-top: 10%;}
+        .swiper-pagination{height: 10px; }
+	.huxing{margin-top: 10px;height: 60%;width: 96%;margin-left: 2%;}
+        img{display: block;width: 100%;height: 100%;}
+        .btn-group {width: 100%;height: 13%;}
+	.btn-group .btn{box-sizing: border-box;border-radius: 0px;background-color:rgba(255,255,255,0.4);border: 1px solid #ccc;border-bottom: none;}
+	.left {width: 100%;height: 100%;text-align: left;position: relative;font-family:"仿宋";opacity: 1;}
+        .btn-group a {text-decoration: none;opacity: 1;width: 100%;height: 100%; display: block;}
+	h4{margin:0px;color:#c3564f;font-family: "仿宋";}
+	.text{color: #000;font-size: 12px;font-family: "仿宋";}
+	    .sm-icon{box-sizing: border-box; display: block; width:40px; height:40px; padding:5px; border-radius:50%; position: absolute; z-index: 99;  }
+	    .sm-icon .icon-img{width: 30px; height: 30px;}
+	    .back{position:absolute; right: 1%; top: 7%;}
+	    .backimg{background: url('../img/back.png'); background-size:cover; }
+    </style>
+</head>
+<body>
+	<!--户型图-->
+	<div class="introduce">
+			<!--轮播图 -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide"><a href="huxing1.html"><img src="../img/shinei/shinei_1.jpg" alt="户型一"/></a></div>
+					<div class="swiper-slide"><a href="huxing2.html"><img src="../img/shinei/shinei_2.jpg" alt="户型二"/></a></div>
+					<div class="swiper-slide"><a href="huxing3.html"><img src="../img/shinei/shinei_3.jpg" alt="户型三"/></a></div>
+					<div class="swiper-slide"><a href="huxing4.html"><img src="../img/shinei/shinei_4.jpg" alt="户型四"/></a></div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<!--户型介绍-->
+			<div class="huxing">
+				<div class="btn-group" >
+					<button type="button" class="btn btn-default left" style="border-radius: 10px 10px 0px 0px">
+						<a href="huxing1.html">
+							<h4>朗</h4>
+							<p class="text">建筑面积约 : 141 ㎡</p>
+						</a>
+					</button>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default left">
+						<a href="huxing2.html">
+							<h4>明</h4>
+							<p class="text">建筑面积约 : 160 ㎡</p>
+						</a>
+					</button>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default left">
+						<a href="huxing3.html">
+							<h4>胄</h4>
+							<p class="text">建筑面积约 : 184 ㎡</p>
+						</a>
+					</button>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default left" style="border-bottom: 1px solid #ccc;border-radius: 0px 0px 10px 10px">
+						<a href="huxing4.html">
+							<h4>曌</h4>
+							<p class="text">建筑面积约 : 220 ㎡</p>
+						</a>
+					</button>
+				</div>
+			</div>
+		</div>
+	<!--返回按钮-->
+	<div class="back sm-icon">
+			<a href="../index.html">
+				<div class="icon-img backimg"></div>
+			</a>
+		</div>
+</body>
+ <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay: 3000
+    });
+ </script>
+</html>

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>西江月-四季景观</title>
+    <script src="../lib/js/jquery-1.11.2.min.js"></script>
+    <script src="../lib/js/responsiveslides.min.js"></script>
+    <style>
+    html,body{
+
+    }
+    #rslides {
+        position: relative;
+        list-style: none;
+        overflow: hidden;
+        width: 100%;
+        padding: 0;
+        margin-top: 50%;
+    }
+
+    #rslides li {
+        -webkit-backface-visibility: hidden;
+        position: absolute;
+        display: none;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    #rslides li:first-child {
+        position: relative;
+        display: block;
+        float: left;
+    }
+
+    #rslides img {
+        display: block;
+        height: auto;
+        float: left;
+        width: 100%;
+        border: 0;
+    }</style>
+</head>
+
+<body>
+<ul id="rslides">
+    <li><img src="siji/1.jpg" alt=""></li>
+    <li><img src="siji/2.jpg" alt=""></li>
+    <li><img src="siji/3.jpg" alt=""></li>
+    <li><img src="siji/4.jpg" alt=""></li>
+</ul>
+</body>
+<script>
+    $("#rslides").responsiveSlides({
+        auto: true,             // Boolean: 设置是否自动播放, true or false
+        speed: 4000,            // Integer: 动画持续时间，单位毫秒
+        timeout: 8000,          // Integer: 图片之间切换的时间，单位毫秒
+        pager: false,           // Boolean: 是否显示页码, true or false
+        nav: false,             // Boolean: 是否显示左右导航箭头（即上翻下翻）, true or false
+        random: false,          // Boolean: 随机幻灯片顺序, true or false
+        pause: false,           // Boolean: 鼠标悬停到幻灯上则暂停, true or false
+        pauseControls: true,    // Boolean: 悬停在控制板上则暂停, true or false
+        prevText: "Previous",   // String: 往前翻按钮的显示文本
+        nextText: "Next",       // String: 往后翻按钮的显示文本
+        maxwidth: "",           // Integer: 幻灯的最大宽度
+        navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+        manualControls: "",     // Selector: 声明自定义分页导航
+        namespace: "rslides",   // String: 修改默认的容器名称
+        before: function(){},   // Function: 回调之前的参数
+        after: function(){}     // Function: 回调之后的参数
+    });
+
+</script>
+
+</html>

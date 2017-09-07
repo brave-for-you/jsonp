@@ -1,0 +1,893 @@
+
+        *{
+            padding:0;
+            margin:0;
+        }
+        ul,li{
+            list-style:none;
+        }
+        body{
+            font-family: "microsoft yahei";
+        }
+        input{
+            border:none;
+            outline:none;
+        }
+        a{
+            text-decoration:none;
+        }
+        input{
+            border:none;
+            outline:none;
+            -webkit-tap-highlight-color:rgba(255,0,0,0) ;
+            -webkit-appearance: none;
+        }
+        select {
+            border: solid 1px #000;
+            appearance:none;
+            -moz-appearance:none;
+            -webkit-appearance:none;
+            background: url("../img/down.png") no-repeat scroll right center transparent;
+            background-size:0.26rem 0.16rem;
+			background-position: 94% 50%;
+            padding-right: 0.24rem;
+        }
+        .head{
+            width:7.5rem;
+            height:0.88rem;
+            font-size:0.32rem;
+            color:#262626;
+            font-weight:bold;
+            text-align:center;
+            line-height:0.88rem;
+            background:#f6f6f6 url(../../img/logo.png) no-repeat;
+            background-size:2.26rem 1.24rem;
+            background-position: 5% 50%;
+            position: relative;
+        }
+        .main{
+            display:block;
+        }
+        #down_payment{
+            background:url(../img/down.png) no-repeat right center;
+            background-size: 0.26rem 0.16rem;
+            background-position: 93% 50%;
+        }
+        .main nav{
+            width:7.5rem;
+            height:0.8rem;
+            background:#fbfbfb;
+        }
+        .main nav .wrap{
+            height:0.8rem;
+        }
+        .main nav .wrap li{
+            font-size:0.24rem;
+            color:#858585;
+            line-height:0.8rem;
+            float:left;
+            width:25%;
+            text-align:center;
+            box-sizing: border-box;
+            margin-bottom: -1px;
+        }
+        .main .total_price{
+            width:7.5rem;
+            height:1rem;
+            background:#ffffff;
+            border-bottom:solid 1px #eeeeee;
+        }
+        .main .total_price input{
+            display:block;
+            float:left;
+            width:3.5rem;
+            line-height:1rem;
+            text-indent:0.5rem;
+            color:#000000;
+            font-weight:bold;
+        }
+        .main .total_price span{
+            display:block;
+            float:left;
+        }
+        .main .total_price a{
+            display:block;
+            float:left;
+            font-size:0.25rem;
+            color:#000000;
+            line-height:1rem;
+            margin-left:0.4rem;
+            font-weight:bold;
+        }
+        .main .total_price span:nth-of-type(1){
+            font-size:0.24rem;
+            color:#d2d5d7;
+            line-height:1rem;
+            text-indent:0.4rem;
+            width:2.8rem;
+        }
+        .main .total_price span:nth-of-type(2){
+            font-size:0.18rem;
+            float:right;
+            line-height:1rem;
+            color:#000000;
+            font-weight:bolder;
+            margin-right:0.4rem;
+        }
+        .main .btn{
+            width:6.94rem;
+            height:0.72rem;
+            background: url(../img/start_calculator.png) no-repeat;
+            background-size: 6.94rem 0.72rem;
+            margin-left:0.3rem;
+            margin-top:0.6rem;
+        }
+        .main #years{
+            float:left;
+            border:none;
+            line-height:1rem;
+            height:1rem;
+            font-weight:bold;
+            margin-left:0.4rem;
+            outline:none;
+            width:4.1rem;
+        }
+        #years1{
+            float:left;
+            border:none;
+            line-height:1rem;
+            height:1rem;
+            font-weight:bold;
+            margin-left:0.4rem;
+            outline:none;
+            width:4.1rem;
+        }
+        #years2{
+            float:left;
+            border:none;
+            line-height:1rem;
+            height:1rem;
+            font-weight:bold;
+            margin-left:0.4rem;
+            outline:none;
+            width:4.1rem;
+        }
+        #years3{
+            float:left;
+            border:none;
+            line-height:1rem;
+            height:1rem;
+            font-weight:bold;
+            margin-left:0.4rem;
+            outline:none;
+            width:4.1rem;
+        }
+        #lv{
+            background:url(../img/down.png) no-repeat right center;
+            background-size: 0.26rem 0.16rem;
+            background-position: 94% 50%;
+        }
+        .big-Box{
+            display:block;
+            margin-top: 1px;
+        }
+		
+        .box{
+            display:none;
+        }
+        .box .total_price{
+            width:7.5rem;
+            height:1rem;
+            background:#ffffff;
+            border-bottom:solid 1px #eeeeee;
+        }
+        .box .total_price input{
+            display:block;
+            float:left;
+            width:2.5rem;
+            line-height:1rem;
+            text-indent:0.5rem;
+        }
+        .box .total_price span{
+            display:block;
+            float:left;
+        }
+        .box .total_price span:nth-of-type(1){
+            font-size:0.24rem;
+            color:#d2d5d7;
+            line-height:1rem;
+            text-indent:0.4rem;
+        }
+        .box .total_price span:nth-of-type(2){
+            font-size:0.24rem;
+            float:left;
+            line-height:1rem;
+            color:#d2d5d7;
+            font-weight:bold;
+            margin-left:1rem;
+        }
+        .box .total_price span:nth-of-type(3){
+            width:1.2rem;
+            height:0.45rem;
+            border:solid 1px #90d5ff;
+            text-align: center;
+            font-size:0.24rem;
+            float:right;
+            line-height:0.45rem;
+            color:#90d5ff;
+            font-weight:bold;
+            margin-right:0.4rem;
+            border-radius: 0.1rem;
+            margin-top:0.25rem;
+        }
+        .box .title{
+            width:100%;
+            height:0.8rem;
+            line-height:0.8rem;
+            background:#f4f4f4;
+            font-size:0.24rem;
+            text-align:left;
+            text-indent:0.3rem;
+            color:#c3c4ca;
+        }
+        .box .wrap1{
+            width:100%;
+            height:auto;
+        }
+        .box .wrap1 li{
+            width:100%;
+            height:0.88rem;
+            background:#ffffff;
+            font-size:0.25rem;
+            color:#000000;
+            border-bottom: solid 1px #f4f4f4;
+            text-align:left;
+            line-height:0.88rem;
+            text-indent:0.3rem;
+            font-weight:bold;
+
+        }
+        .box1{
+            display:none;
+        }
+        .box1 .total_price{
+            width:7.5rem;
+            height:1rem;
+            background:#ffffff;
+            border-bottom:solid 1px #eeeeee;
+        }
+        .box1 .total_price input{
+            display:block;
+            float:left;
+            width:2.5rem;
+            line-height:1rem;
+            text-indent:0.5rem;
+        }
+        .box1 .total_price span{
+            display:block;
+            float:left;
+        }
+        .box1 .total_price span:nth-of-type(1){
+            font-size:0.24rem;
+            color:#d2d5d7;
+            line-height:1rem;
+            text-indent:0.4rem;
+        }
+        .box1 .total_price span:nth-of-type(2){
+            font-size:0.24rem;
+            float:left;
+            line-height:1rem;
+            color:#d2d5d7;
+            font-weight:bold;
+            margin-left:1rem;
+        }
+        .box1 .total_price span:nth-of-type(3){
+            width:1.2rem;
+            height:0.45rem;
+            border:solid 1px #90d5ff;
+            text-align: center;
+            font-size:0.24rem;
+            float:right;
+            line-height:0.45rem;
+            color:#90d5ff;
+            font-weight:bold;
+            margin-right:0.4rem;
+            border-radius: 0.1rem;
+            margin-top:0.25rem;
+        }
+        .box1 .title{
+            width:100%;
+            height:0.8rem;
+            line-height:0.8rem;
+            background:#f4f4f4;
+            font-size:0.24rem;
+            text-align:left;
+            text-indent:0.3rem;
+            color:#c3c4ca;
+        }
+        .box1 .wrap2{
+            width:100%;
+            height:auto;
+        }
+        .box1 .wrap2 li{
+            width:100%;
+            height:0.88rem;
+            background:#ffffff;
+            font-size:0.25rem;
+            color:#000000;
+            border-bottom: solid 1px #f4f4f4;
+            text-align:left;
+            line-height:0.88rem;
+            text-indent:0.3rem;
+            font-weight:bold;
+
+        }
+        .box-ZH{
+            display:none;
+        }
+        .box-ZH .total_price{
+            width:7.5rem;
+            height:1rem;
+            background:#ffffff;
+            border-bottom:solid 1px #eeeeee;
+        }
+        .box-ZH .total_price input{
+            display:block;
+            float:left;
+            width:2.5rem;
+            line-height:1rem;
+            text-indent:0.5rem;
+        }
+        .box-ZH .total_price span{
+            display:block;
+            float:left;
+        }
+        .box-ZH .total_price span:nth-of-type(1){
+            font-size:0.24rem;
+            color:#d2d5d7;
+            line-height:1rem;
+            text-indent:0.4rem;
+        }
+        .box-ZH .total_price span:nth-of-type(2){
+            font-size:0.24rem;
+            float:left;
+            line-height:1rem;
+            color:#d2d5d7;
+            font-weight:bold;
+            margin-left:1rem;
+        }
+        .box-ZH .total_price span:nth-of-type(3){
+            width:1.2rem;
+            height:0.45rem;
+            border:solid 1px #90d5ff;
+            text-align: center;
+            font-size:0.24rem;
+            float:right;
+            line-height:0.45rem;
+            color:#90d5ff;
+            font-weight:bold;
+            margin-right:0.4rem;
+            border-radius: 0.1rem;
+            margin-top:0.25rem;
+        }
+        .box-ZH .title{
+            width:100%;
+            height:0.8rem;
+            line-height:0.8rem;
+            background:#f4f4f4;
+            font-size:0.24rem;
+            text-align:left;
+            text-indent:0.3rem;
+            color:#c3c4ca;
+        }
+        .box-ZH .wrap3{
+            width:100%;
+            height:auto;
+        }
+        .box-ZH .wrap3 li{
+            width:100%;
+            height:0.88rem;
+            background:#ffffff;
+            font-size:0.25rem;
+            color:#000000;
+            border-bottom: solid 1px #f4f4f4;
+            text-align:left;
+            line-height:0.88rem;
+            text-indent:0.3rem;
+            font-weight:bold;
+
+        }
+        /*商业贷*/
+        .detail{
+            position: relative;
+            width:7.5rem;
+            height:12.56rem;
+            background:#ffffff;
+            margin-top:0.5rem;
+            display:none;
+        }
+        .detail .head1{
+            width:4.6rem;
+            height:0.66rem;
+            border-radius:0.5rem;
+            border:solid 1px #00b1ff;
+            margin-left:1.3rem;
+
+        }
+        .detail .head1 span{
+            display:block;
+            float:left;
+            width:49%;
+            height:0.6rem;
+            line-height:0.6rem;
+            text-align:center;
+            font-size:0.28rem;
+        }
+        .detail .head1 span:nth-of-type(1){
+            background:#00b1ff;
+            margin-top:0.03rem;
+            margin-left:0.04rem;
+            color:#ffffff;
+            border-radius: 0.5rem 0 0 0.5rem;
+        }
+        .detail .head1 span:nth-of-type(2){
+            margin-top:0.030rem;
+            margin-left:0.02rem;
+            margin-right:0.03rem;
+            color:#00b1ff;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        .detail .p1{
+            width:3.85rem;
+            font-size:0.28rem;
+            color:#bfc0c5;
+            margin-left:1.8rem;
+            margin-top:0.2rem;
+            text-align: center;
+        }
+        .detail .p2{
+            width:3.85rem;
+            font-size:0.28rem;
+            color:#bfc0c5;
+            margin-left:1.8rem;
+            margin-top:0.2rem;
+            display:none;
+            text-align: center;
+        }
+        .detail .month-pay{
+            width:7.5rem;
+            height:4rem;
+            background:#ffffff;
+        }
+        .detail .details-xin{
+            width:3.5rem;
+            margin-left:1.8rem;
+        }
+        .detail .details-xin p{
+            width:120%;
+            line-height:0.8rem;
+
+        }
+        .detail .details-xin p span{
+            display:block;
+            float:left;
+            font-size:0.28rem;
+        }
+        .detail .details-xin p span:nth-of-type(1){
+            margin-left:0.2rem;
+            color:#c6c7cb;
+            text-align:right;
+            width:1.8rem;
+        }
+        .detail .details-xin p span:nth-of-type(2){
+            margin-left:0.2rem;
+            color:#000000;
+            font-weight:bold;
+        }
+        .detail .details-xin p span:nth-of-type(3){
+            margin-left:0.2rem;
+            color:#c6c7cb;
+
+        }
+        .detail .jian{
+            display:none;
+        }
+        /*公积金贷*/
+        .detail3{
+            width:7.5rem;
+            height:12.56rem;
+            background:#ffffff;
+            margin-top:0.5rem;
+            display:none;
+        }
+        .detail3 .head1{
+            width:4.6rem;
+            height:0.66rem;
+            border-radius:0.5rem;
+            border:solid 1px #00b1ff;
+            margin-left:1.3rem;
+
+        }
+        .detail3 .head1 span{
+            display:block;
+            float:left;
+            width:49%;
+            height:0.6rem;
+            line-height:0.6rem;
+            text-align:center;
+            font-size:0.28rem;
+        }
+        .detail3 .head1 span:nth-of-type(1){
+            background:#00b1ff;
+            margin-top:0.03rem;
+            margin-left:0.04rem;
+            color:#ffffff;
+            border-radius: 0.5rem 0 0 0.5rem;
+        }
+        .detail3 .head1 span:nth-of-type(2){
+            margin-top:0.030rem;
+            margin-left:0.02rem;
+            margin-right:0.03rem;
+            color:#00b1ff;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        .detail3 .p1{
+            width:3.85rem;
+            font-size:0.28rem;
+            color:#bfc0c5;
+            margin-left:1.8rem;
+            margin-top:0.2rem;
+            text-align: center;
+        }
+        .detail3 .p2{
+            width:3.85rem;
+            font-size:0.28rem;
+            color:#bfc0c5;
+            margin-left:1.8rem;
+            margin-top:0.2rem;
+            display:none;
+            text-align: center;
+        }
+        .detail3 .month-pay{
+            width:7.5rem;
+            height:4rem;
+            background:#ffffff;
+        }
+        .detail3 .details-xin{
+            width:3.5rem;
+            margin-left:1.8rem;
+        }
+        .detail3 .details-xin p{
+            width:120%;
+            line-height:0.8rem;
+
+        }
+        .detail3 .details-xin p span{
+            display:block;
+            float:left;
+            font-size:0.28rem;
+        }
+        .detail3 .details-xin p span:nth-of-type(1){
+            margin-left:0.2rem;
+            color:#c6c7cb;
+            text-align:right;
+            width:1.8rem;
+        }
+        .detail3 .details-xin p span:nth-of-type(2){
+            margin-left:0.2rem;
+            color:#000000;
+            font-weight:bold;
+        }
+        .detail3 .details-xin p span:nth-of-type(3){
+            margin-left:0.2rem;
+            color:#c6c7cb;
+
+        }
+        .detail3 .jian{
+            display:none;
+        }
+        /*组合贷*/
+        .detail1{
+            width:7.5rem;
+            height:12.56rem;
+            background:#ffffff;
+            margin-top:0.5rem;
+            display:none;
+        }
+        .detail1 .head1{
+            width:4.6rem;
+            height:0.66rem;
+            border-radius:0.5rem;
+            border:solid 1px #00b1ff;
+            margin-left:1.3rem;
+
+        }
+        .detail1 .head1 span{
+            display:block;
+            float:left;
+            width:49%;
+            height:0.6rem;
+            line-height:0.6rem;
+            text-align:center;
+            font-size:0.28rem;
+
+
+        }
+        .detail1 .head1 span:nth-of-type(1){
+            background:#00b1ff;
+            margin-top:0.025rem;
+            margin-left:0.01rem;
+            color:#ffffff;
+            border-radius: 0.5rem 0rem 0 0.5rem;
+        }
+        .detail1 .head1 span:nth-of-type(2){
+            margin-top:0.025rem;
+            margin-left:0.04rem;
+            color:#00b1ff;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        .detail1 .p1{
+            width:3.85rem;
+            font-size:0.28rem;
+            color:#bfc0c5;
+            margin-left:1.8rem;
+            margin-top:0.2rem;
+        }
+        .detail1 .p2{
+            width:3.85rem;
+            font-size:0.28rem;
+            color:#bfc0c5;
+            margin-left:1.8rem;
+            margin-top:0.2rem;
+            display:none;
+        }
+        .detail1 .month-pay{
+            width:7.5rem;
+            height:4rem;
+            background:#ffffff;
+        }
+        .detail1 .details-xin{
+            width:3.5rem;
+            margin-left:1.8rem;
+        }
+        .detail1 .details-xin p{
+            width:120%;
+            line-height:0.8rem;
+
+        }
+        .detail1 .details-xin p span{
+            display:block;
+            float:left;
+            font-size:0.28rem;
+        }
+        .detail1 .details-xin p span:nth-of-type(1){
+            margin-left:0.2rem;
+            color:#c6c7cb;
+            text-align:right;
+            width:1.8rem;
+        }
+        .detail1 .details-xin p span:nth-of-type(2){
+            margin-left:0.2rem;
+            color:#000000;
+            font-weight:bold;
+        }
+        .detail1 .details-xin p span:nth-of-type(3){
+            margin-left:0.2rem;
+            color:#c6c7cb;
+
+        }
+        .detail1 .jian{
+            display:none;
+        }
+        /*税费计算*/
+        .detail2{
+            width:7.5rem;
+            height:12.56rem;
+            background:#ffffff;
+            margin-top:0.5rem;
+            display:none;
+        }
+        .detail2 .head1{
+            width:4.6rem;
+            height:0.66rem;
+            border-radius:0.5rem;
+            border:solid 1px #00b1ff;
+            margin-left:1.3rem;
+
+        }
+        .detail2 .head1 span{
+            display:block;
+            float:left;
+            width:49%;
+            height:0.6rem;
+            line-height:0.6rem;
+            text-align:center;
+            font-size:0.28rem;
+
+
+        }
+        .detail2 .head1 span:nth-of-type(1){
+            background:#00b1ff;
+            margin-top:0.025rem;
+            margin-left:0.01rem;
+            color:#ffffff;
+            border-radius: 0.5rem 0rem 0 0.5rem;
+        }
+        .detail2 .head1 span:nth-of-type(2){
+            margin-top:0.025rem;
+            margin-left:0.04rem;
+            color:#00b1ff;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        .detail2 .p1{
+            width:3.85rem;
+            font-size:0.28rem;
+            color:#bfc0c5;
+            margin-left:1.8rem;
+            margin-top:0.2rem;
+        }
+        .detail2 .p2{
+            width:3.85rem;
+            font-size:0.28rem;
+            color:#bfc0c5;
+            margin-left:1.8rem;
+            margin-top:0.2rem;
+            display:none;
+        }
+        .detail2 .month-pay{
+            width:7.5rem;
+            height:4rem;
+            background:#ffffff;
+        }
+        .detail2 .details-xin{
+            width:3.5rem;
+            margin-left:1.8rem;
+        }
+        .detail2 .details-xin p{
+            width:130%;
+            line-height:0.8rem;
+
+        }
+        .detail2 .details-xin p span{
+            display:block;
+            float:left;
+            font-size:0.28rem;
+        }
+        .detail2 .details-xin p span:nth-of-type(1){
+            color: #c6c7cb;
+            text-align: right;
+            width: 2.4rem;
+        }
+        .detail2 .details-xin p span:nth-of-type(2){
+            margin-left:0.2rem;
+            color:#000000;
+            font-weight:bold;
+        }
+        .detail2 .details-xin p span:nth-of-type(3){
+            margin-left:0.2rem;
+            color:#c6c7cb;
+        }
+        .detail2 .jian{
+            display:none;
+        }
+
+        /*组合贷*/
+        .box-zh{
+            width:7.5rem;
+            height:auto;
+            background:#ffffff;
+            display:none;
+            margin-top: 1px;
+        }
+
+        .detail .weizi{
+            width:1.2rem;
+            position:absolute;
+            top: 1.6rem;
+            left:45%;
+            margin-left:-0.5rem;
+        }
+        .detail .month-pay{
+            position:relative;
+        }
+        .detail .weizi span{
+            width:100%;
+            float:left;
+            font-size:0.3rem;
+            text-align:center;
+            color:#8e9595;
+        }
+
+        .detail1 .weizi{
+            width:1rem;
+            position:absolute;
+            top: 1.6rem;
+            left: 2.95rem;
+        }
+        .detail1 .month-pay{
+            position:relative;
+        }
+        .detail1 .weizi span{
+            width:100%;
+            float:left;
+            font-size:0.3rem;
+            text-align:center;
+            color:#8e9595;
+        }
+
+        .detail2 .weizi{
+            width:1.2rem;
+            position:absolute;
+            top: 1.6rem;
+            left: 2.95rem;
+        }
+        .detail2 .month-pay{
+            position:relative;
+        }
+        .detail2 .weizi span{
+            width:100%;
+            float:left;
+            font-size:0.3rem;
+            text-align:center;
+            color:#8e9595;
+        }
+
+        .detail3 .weizi{
+            width:1.2rem;
+            position:absolute;
+            top: 1.6rem;
+            left:45%;
+            margin-left:-0.5rem;
+        }
+        .detail3 .month-pay{
+            position:relative;
+        }
+        .detail3 .weizi span{
+            width:100%;
+            float:left;
+            font-size:0.3rem;
+            text-align:center;
+            color:#8e9595;
+        }
+
+        #ck1 label{
+            float:left;
+            width:2rem;
+            height: 1rem;
+            font-size:0.15rem;
+            line-height: 1rem;
+        }
+        #ck2 label{
+            float:right;
+            width:2rem;
+            height: 1rem;
+            font-size:0.15rem;
+            line-height: 1rem;
+        }
+        #ck1>label>input,#ck2>label>input{
+            -webkit-appearance: radio;
+            display: block;
+            width: 50%;
+            height: 0.2rem;
+            margin-top: 0.4rem;
+        }
+        .box-sf{
+            display:none;
+            margin-top: 1px;
+        }
+        #lv1,#lv2{
+            background: url(../img/down.png) no-repeat right center;
+            background-size: 0.26rem 0.16rem;
+            background-position: 94% 50%;
+        }
+        .foot{
+            width: 2rem;
+            height: 1rem;
+            line-height: 1rem;
+            text-align: center;
+            font-size: 12px;
+            color: #cccccc;
+            position: absolute;
+            bottom: 5%;
+            right: 15%;
+        }

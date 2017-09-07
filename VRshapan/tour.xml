@@ -1,0 +1,220 @@
+﻿<krpano version="1.19" title="西江月" onstart="startup();">
+	<!--引入文件-->
+	<include url="%SWFPATH%/config.xml" />
+	<include url="%SWFPATH%/skin/vtourskin.xml" />
+    <include url="../Allxml/Loading/loading.xml" />
+	<!-- 启动动作-加载第一个场景 -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+		set(layer[skin_title_pr].html,get(title));
+	</action>
+
+	<!--scene标签-->
+    <scene name="scene_kt1" title="客厅"  onstart="activatespot(90);" havevrimage="true" thumburl="panos/kt1.tiles/thumb.jpg" heading="">
+		<!--默认的小行星视觉-->
+			<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" />
+			<preview url="panos/kt1.tiles/preview.jpg" />
+			<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+				<level tiledimagewidth="1280" tiledimageheight="1280">
+					<cube url="panos/kt1.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+				</level>
+				<level tiledimagewidth="640" tiledimageheight="640">
+					<cube url="panos/kt1.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+				</level>
+			</image>
+			<image if="webvr.isenabled">
+				<cube url="panos/kt1.tiles/vr/pano_%s.jpg" />
+			</image>
+			<!-- 把你的场景热点放在这里 -->
+			<hotspot name="kt1" style="hotspotstyle" text="户外" ath="94" atv="5" linkedscene="scene_hw1"/>
+			<hotspot name="ws1" style="hotspotstyle" text="卧室1" ath="-94" atv="5" linkedscene="scene_ws_0" />
+			<hotspot name="hx1" style="hotspotstyle" text="户型1" ath="0" atv="5" linkedscene="scene_hx_1" />
+	</scene>
+
+	<!--<scene name="scene_hw1" title="户外" onstart="activatespot(90);" havevrimage="true" thumburl="panos/hw1.tiles/thumb.jpg" heading="">-->
+
+			<!--<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-65.829" vlookatmax="65.829" />-->
+
+			<!--<preview url="panos/hw1.tiles/preview.jpg" />-->
+			<!--<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">-->
+				<!--<level tiledimagewidth="640" tiledimageheight="640">-->
+					<!--<cube url="panos/hw1.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />-->
+				<!--</level>-->
+			<!--</image>-->
+
+			<!--<image if="webvr.isenabled">-->
+				<!--<cube url="panos/hw1.tiles/vr/pano_%s.jpg" />-->
+			<!--</image>-->
+			<!--&lt;!&ndash; place your scene hotspots here &ndash;&gt;-->
+			<!--<hotspot name="cj_1" style="hotspotstyle" ath="-94" atv="5" linkedscene="scene_cj_2" />-->
+	<!--</scene>-->
+
+	<!--<scene name="scene_cj_2" title="场景2" onstart="activatespot(90);" havevrimage="true" thumburl="panos/cj_2.tiles/thumb.jpg" heading="">-->
+
+			<!--<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-65.829" vlookatmax="65.829" />-->
+
+			<!--<preview url="panos/cj_2.tiles/preview.jpg" />-->
+
+			<!--<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">-->
+				<!--<level tiledimagewidth="640" tiledimageheight="640">-->
+					<!--<cube url="panos/cj_2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />-->
+				<!--</level>-->
+			<!--</image>-->
+
+			<!--<image if="webvr.isenabled">-->
+				<!--<cube url="panos/cj_2.tiles/vr/pano_%s.jpg" />-->
+			<!--</image>-->
+
+			<!--&lt;!&ndash; place your scene hotspots here &ndash;&gt;-->
+			<!--<hotspot name="cj_1" style="hotspotstyle" ath="10" atv="5" linkedscene="scene_hw1" />-->
+			<!--<hotspot name="cj_3" style="hotspotstyle" ath="-94" atv="5" linkedscene="scene_cj_3" />-->
+
+		<!--</scene>-->
+
+	<!--<scene name="scene_cj_3" title="场景3" onstart="activatespot(90);" havevrimage="true" thumburl="panos/cj_3.tiles/thumb.jpg" heading="">-->
+
+		<!--<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-65.829" vlookatmax="65.829" />-->
+
+			<!--<preview url="panos/cj_3.tiles/preview.jpg" />-->
+
+			<!--<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">-->
+				<!--<level tiledimagewidth="640" tiledimageheight="640">-->
+					<!--<cube url="panos/cj_3.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />-->
+				<!--</level>-->
+			<!--</image>-->
+
+			<!--<image if="webvr.isenabled">-->
+				<!--<cube url="panos/cj_3.tiles/vr/pano_%s.jpg" />-->
+			<!--</image>-->
+
+			<!--&lt;!&ndash; place your scene hotspots here &ndash;&gt;-->
+
+		<!--</scene>-->
+
+	<!--<scene name="scene_cj_4" title="场景4" onstart="activatespot(90);" havevrimage="true" thumburl="panos/cj_4.tiles/thumb.jpg"   heading="">-->
+
+			<!--<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="range" vlookatmin="-65.829" vlookatmax="65.829" />-->
+
+			<!--<preview url="panos/cj_4.tiles/preview.jpg" />-->
+
+			<!--<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">-->
+				<!--<level tiledimagewidth="640" tiledimageheight="640">-->
+					<!--<cube url="panos/cj_4.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />-->
+				<!--</level>-->
+			<!--</image>-->
+
+			<!--<image if="webvr.isenabled">-->
+				<!--<cube url="panos/cj_4.tiles/vr/pano_%s.jpg" />-->
+			<!--</image>-->
+
+			<!--&lt;!&ndash; place your scene hotspots here &ndash;&gt;-->
+
+		<!--</scene>-->
+
+	<!--<scene name="scene_hx_1" title="户型1" onstart="activatespot(90);" havevrimage="true" thumburl="panos/hx_1.tiles/thumb.jpg" heading="">-->
+
+			<!--<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />-->
+
+			<!--<preview url="panos/hx_1.tiles/preview.jpg" />-->
+
+			<!--<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">-->
+				<!--<level tiledimagewidth="256" tiledimageheight="256">-->
+					<!--<cube url="panos/hx_1.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />-->
+				<!--</level>-->
+			<!--</image>-->
+
+			<!--<image if="webvr.isenabled">-->
+				<!--<cube url="panos/hx_1.tiles/vr/pano_%s.jpg" />-->
+			<!--</image>-->
+
+			<!--&lt;!&ndash; place your scene hotspots here &ndash;&gt;-->
+
+		<!--</scene>-->
+
+	<!--<scene name="scene_hx_2" title="户型2" onstart="activatespot(90);" havevrimage="true" thumburl="panos/hx_2.tiles/thumb.jpg"  heading="">-->
+
+			<!--<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />-->
+
+			<!--<preview url="panos/hx_2.tiles/preview.jpg" />-->
+
+			<!--<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">-->
+				<!--<level tiledimagewidth="256" tiledimageheight="256">-->
+					<!--<cube url="panos/hx_2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />-->
+				<!--</level>-->
+			<!--</image>-->
+
+			<!--<image if="webvr.isenabled">-->
+				<!--<cube url="panos/hx_2.tiles/vr/pano_%s.jpg" />-->
+			<!--</image>-->
+
+			<!--&lt;!&ndash; place your scene hotspots here &ndash;&gt;-->
+
+		<!--</scene>-->
+
+	<!--<scene name="scene_hx_3" title="户型3" onstart="activatespot(90);" havevrimage="true" thumburl="panos/hx_3.tiles/thumb.jpg"  heading="">-->
+
+			<!--<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />-->
+
+			<!--<preview url="panos/hx_3.tiles/preview.jpg" />-->
+
+			<!--<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">-->
+				<!--<level tiledimagewidth="256" tiledimageheight="256">-->
+					<!--<cube url="panos/hx_3.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />-->
+				<!--</level>-->
+			<!--</image>-->
+
+			<!--<image if="webvr.isenabled">-->
+				<!--<cube url="panos/hx_3.tiles/vr/pano_%s.jpg" />-->
+			<!--</image>-->
+
+			<!--&lt;!&ndash; place your scene hotspots here &ndash;&gt;-->
+
+		<!--</scene>-->
+
+	<!--<scene name="scene_hx_4" title="户型4" onstart="activatespot(90);" havevrimage="true" thumburl="panos/hx_4.tiles/thumb.jpg" heading="">-->
+
+			<!--<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />-->
+
+			<!--<preview url="panos/hx_4.tiles/preview.jpg" />-->
+
+			<!--<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">-->
+				<!--<level tiledimagewidth="512" tiledimageheight="512">-->
+					<!--<cube url="panos/hx_4.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />-->
+				<!--</level>-->
+			<!--</image>-->
+
+			<!--<image if="webvr.isenabled">-->
+				<!--<cube url="panos/hx_4.tiles/vr/pano_%s.jpg" />-->
+			<!--</image>-->
+
+			<!--&lt;!&ndash; place your scene hotspots here &ndash;&gt;-->
+
+		<!--</scene>-->
+
+	<!--<scene name="scene_ws_0" title="卧室" onstart="activatespot(90);" havevrimage="true" thumburl="panos/ws_0.tiles/thumb.jpg"  heading="">-->
+
+			<!--<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />-->
+
+			<!--<preview url="panos/ws_0.tiles/preview.jpg" />-->
+
+			<!--<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">-->
+				<!--<level tiledimagewidth="640" tiledimageheight="640">-->
+					<!--<cube url="panos/ws_0.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />-->
+				<!--</level>-->
+			<!--</image>-->
+
+			<!--<image if="webvr.isenabled">-->
+				<!--<cube url="panos/ws_0.tiles/vr/pano_%s.jpg" />-->
+			<!--</image>-->
+
+			<!--&lt;!&ndash; place your scene hotspots here &ndash;&gt;-->
+
+		<!--</scene>-->
+
+	<!--自动旋转设置：waittime:旋转等待时间 	speed：旋转速度		horizon：自动旋转的目标位置		tofov：旋转中达到的视场角-->
+	<autorotate enabled="true" waittime="5.0" speed="3.0" horizon="0.0" tofov="120.0" />
+		
+	<layer onclick="switch(autorotate.enabled);"/>
+</krpano>

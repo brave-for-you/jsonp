@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>保利西江月-160户型</title>
+    <meta name="viewport" content="width=device-width, inital-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/ico" href="http://www.alphavisual.cn/favicon.ico" />
+    <link rel="stylesheet" href="../lib/css/swiper.min.css">
+    <script src="../lib/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="../lib/js/swiper.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/three.js"></script>
+    <!--引入相机插件-->
+    <script type="text/javascript" src="js/OrbitControls.js"></script>
+    <!--引入外部模型加载插件-->
+    <script type="text/javascript" src="js/OBJLoader.js"></script>
+    <script type="text/javascript" src="js/MTLLoader.js"></script>
+    <script type="text/javascript" src="js/OBJMTLLoader.js"></script>
+    <style media="screen">
+        *{padding: 0; margin: 0; border: 0;}
+        html, body {
+            position: relative;
+            width:100%;
+            height: 100%;
+            max-width: 640px;
+            max-height: 1008px;
+            margin: 0 auto;
+            box-shadow: 0 0 70px #000;
+            color:#978676;
+            font-size: 8px;
+        }
+        #model{width: 100%;height: 50%;margin-top: 0%;background-color: #fffcec;}
+        .text{text-align: center;margin-top: 10%;color: #aa9376;}
+        h3{color:#998771;font-size:14px;}
+        .zuozhe{width: 100%;margin: 10px auto;font-size:12px;}
+        .ci{width: 100%;margin: 10px 0px;font-size:10px;}
+        .container{margin-top: 10px;}
+        ul{list-style:none;}
+        .introduce {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            text-align: center;
+        }
+        .swiper-main{
+            height:100%;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .page01{
+            background: url('../img/huxing/bg-img.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .huabian{
+            width: 84%;
+            height: 6px;
+            background: url("../img/huxing/tiao.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            left: 8%;
+        }
+        .main{
+            width: 100%;
+            height: 80%;
+            position: absolute;
+            top: 10%;
+        }
+        .size{
+            font-family: "Adobe 宋体 Std L";
+            font-size: 10px;
+            text-align: center;
+            margin-top: 5%;
+        }
+        .size span{
+            margin:0 5px;
+        }
+        .huxing {
+            height: 60%;
+            width: 90%;
+            margin-left: 5%;
+            margin-top: 10%;
+        }
+        .huxing img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .unit{
+            margin-top: 8%;
+        }
+        .icon{
+            margin-top: 5%;
+        }
+        .note{
+            margin-top: 5%;
+        }
+        .page01 .btn{
+            width: 20px;
+            background: -webkit-gradient(linear, left top, left bottom, from(#e6dbd5), to(#735847));
+            color:#fff;
+            text-align: center;
+            font-size: 12px;
+            border: 1px solid #a3a3a3;
+            position: absolute;
+            border-radius: 10px;
+            bottom: 10%;
+            right: 5%;
+        }
+        .page02{background: url('img/hxjs1.jpg');background-size:cover; background-position:50% 50%;background-size: 100% 100%;}
+        .page02 .btn1{
+            width: 20px;
+            background: -webkit-gradient(linear, left top, left bottom, from(#978676), to(#735847));
+            color:#fff;
+            text-align: center;
+            font-size: 12px;
+            border: 1px solid #a3a3a3;
+            position: absolute;
+            border-radius: 10px;
+            bottom: 10%;
+            right: 5%;
+        }
+	 .page02 .btn2{
+            width: 20px;
+            background: -webkit-gradient(linear, left top, left bottom, from(#978676), to(#735847));
+            color:#fff;
+            text-align: center;
+            font-size: 12px;
+            border: 1px solid #a3a3a3;
+            position: absolute;
+            border-radius: 10px;
+            bottom: 24%;
+            right: 5%;
+        }
+        .page03{background: url('img/hxjs1.jpg'); background-position:50% 50%;background-size: 100% 100%;background-repeat: no-repeat;}
+        .page03 p{color: #0f0f0f;font-size: 20px;text-align: center;margin-top: 40%;}
+	    .sm-icon{box-sizing: border-box; display: block; width:40px; height:40px; padding:5px; border-radius:50%; position: absolute; z-index: 99;  }
+	    .sm-icon .icon-img{width: 30px; height: 30px;}
+        .back{position:absolute; right: 1%; top: 7%;}
+        .backimg{background: url('../img/back_hei.png'); background-size:cover;}
+        .introduce {width: 100%;height: 100%;overflow: hidden;background-image: url("../img/bgimg/hxjs_bgimg.png");background-size: 100% 100%;background-repeat: no-repeat;}
+    </style>
+</head>
+<body>
+    <div class="introduce">
+        <div class="swiper-container swiper-main">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide page01 swiper-no-swiping"  data-hash="page01">
+                    <div class="huabian" style="top: 5%"></div>
+                    <div class="main">
+                        <div class="size">
+                            <span>建筑面积为160M²</span>
+                            <span>四房两厅两卫</span>
+                        </div>
+                        <div class="huxing">
+                            <img src="../img/huxing/160.png" alt="">
+                        </div>
+                        <div class="unit">
+                            <span>单位：</span>
+                            <span>毫米 mm</span>
+                        </div>
+                        <div class="icon">
+                            <img src="../img/huxing/icon.png" alt="">
+                        </div>
+                        <div class="note">
+                            <span>注：</span>
+                            <span>因户型位置分布不同，该户型产品间飘窗台处会有差距</span>
+                        </div>
+                    </div>
+                    <div class="huabian" style="bottom: 5%"></div>
+                    <div class="btn">立体户型</div>
+                </div>
+                <div class="swiper-slide page02 swiper-no-swiping"  data-hash="page02">
+                    <div id="model"></div>
+                    <div class="text">
+                        <h3>春江潮水连海平·海上明月共潮生</h3>
+                        <div class="container">
+                            <p class="zuozhe"> 唐·张若虚</p>
+                            <p class="ci">明心大宅，南北通透，经典十字宽厅</p>
+                            <p class="ci">玄关、门厅、起居室，演绎三重入户礼仪</p>
+                            <p class="ci">餐客厨一线，厨房与生活阳台相连</p>
+ 			    <p class="ci">生活起居落落有序，人生过往进退有度</p>
+                            <p class="ci">四室朝阳，书房与客厅共享宽景阳台</p>
+  			    <p class="ci">月明风清之地，方能明心见性</p>
+                        </div>
+                    </div>
+                    <div class="btn1">全景看房</div>
+		    <div class="btn2">平面户型</div>
+                </div>
+                <div class="swiper-slide page03 swiper-no-swiping"  data-hash="page03"></div>
+            </div>
+            <div class="swiper-pagination" style="opacity: 0;"></div>
+        </div>
+        <!--返回按钮-->
+        <div class="back sm-icon">
+            <a href="HXjianshang.html">
+                <div class="icon-img backimg"></div>
+            </a>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-main',{
+        effect: 'fade',
+        setWrapperSize :true,
+        pagination : '.swiper-pagination',
+        paginationClickable :true
+    });
+    //添加链接
+    $(".btn").click(function () {
+         swiper.slideTo(1,1000,false);
+        $('.back').css('display','none');
+    });
+    $(".btn1").click(function () {
+         swiper.slideTo(2,1000,false);
+         window.location.href="../VRshapan/tour.html";
+        //alert("全景场景尚未完善，暂不开放...");
+    });
+    $(".btn2").click(function () {
+         swiper.slideTo(0,1000,false);
+	$('.back').css('display','block');
+    });
+
+    //判断移动端设备
+   function IsPC() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+        if(bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsCE || bIsWM) {
+            $(".btn").css("height","12%");
+        }else if (bIsAndroid){
+            $(".btn").css("height","11%");
+        }else if (bIsIpad){
+            $(".btn").css("height","9%");
+        }else {
+            $(".btn").css("height","7%");
+        }
+    }
+
+    //立体模型
+    moxing();
+    function moxing() {
+        var Model = document.getElementById("model");
+        var width = Model.offsetWidth;
+        var height = Model.offsetHeight;
+        var scene =new THREE.Scene();//创建场景
+        var geometry = new THREE.BoxGeometry();//创建几何模型对象（长宽高）
+        var materialNormal = new THREE.MeshLambertMaterial({
+            color:0xffffff,
+            map:THREE.ImageUtils.loadTexture('160/160.jpg')
+        });//材质对象
+
+        scene.overrideMaterial = materialNormal;
+
+        renderer = new THREE.WebGLRenderer({ antialiasing: true });
+        renderer.autoClear = false;
+
+        //网格模型
+        var mesh = new THREE.Mesh(geometry,materialNormal);//创建网格模型对象，需要两个参数（几何模型，材质）
+        scene.add(mesh);
+
+        //加载外部模型--没有材质
+        var loader = new THREE.OBJLoader();
+        loader.load('160/160.obj', function(obj){
+            obj.scale.set(10,10,10);
+            obj.position.y=30;
+            obj.position.x=0;
+            scene.add(obj);
+        });
+
+        //添加灯光
+        var light = new THREE.AmbientLight(0xffffff);
+        light.intensity = 1.2;
+        light.position.set(600,800,800);
+        scene.add(light);
+
+        //添加相机
+        var camera = new THREE.PerspectiveCamera(45, width/height, 1, 10000);
+        camera.position.set(0,343,125);
+        camera.lookAt(scene.position);
+
+        var renderer = new THREE.WebGLRenderer({
+            antialias:true,       //是否开启反锯齿
+            precision:"highp",    //着色精度选择
+	    alpha:false,           //是否可以设置背景色透明
+            premultipliedAlpha:true,
+            stencil:true,
+            preserveDrawingBuffer:true, //是否保存绘图缓冲
+            maxLights:1           //maxLights:最大灯光数
+        });
+        renderer.setSize(width,height);
+        console.log(renderer.setSize(width, height));
+
+        Model.appendChild(renderer.domElement);
+
+
+        function render(){
+            renderer.render(scene,camera);
+        }
+        render();
+
+        //相机文档控制
+        var controls = new THREE.OrbitControls(camera,renderer.domElement);
+        controls.maxPolarAngle = 1.5;
+        controls.minPolarAngle = 0.3;
+
+        controls.enableZoom = true;
+
+        controls.addEventListener("change",render);
+        //动画渲染
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+        }
+        animate();
+
+        //获取模型位置
+        Model.onclick = function () {
+           console.log(camera.position);
+        }
+    }
+</script>
+</html>

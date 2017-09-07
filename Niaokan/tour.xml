@@ -1,0 +1,145 @@
+﻿<krpano version="1.19" title="西江月" onstart="startup();">
+
+	<include url="skin/vtourskin.xml" />
+	<include url="%SWFPATH%/../Allxml/Loading/loading.xml" />
+
+	<!-- 皮肤设置 -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="true"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+                   loadscene_blend="ZOOMBLEND(2.0, 2.0, easeInOutSine)"
+                   loadscene_blend_prev="OPENBLEND(1.0, -0.5, 0.3, 0.8, linear)"
+                   loadscene_blend_next="BLEND(1.0,easeInCubic)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+    <!--文字logo-->
+    <layer name="text"
+           url="%SWFPATH%/plugins/textfield.swf"
+           html="北京阿尔法视觉科技技术支持"
+           align="leftttop"
+           x="0" y="0" width="200" height="20"
+           keep="true"
+           visible="true"
+           backgroundalpha="0"
+           backgroundcolor="#000"
+           css="text-align:left; color:#9B8179; font-family:SimHei; font-size:12px;"
+           onclick="openurl('http://www.alphavisual.cn/',_blank);"
+    />
+	
+	<!--过度动画-->
+	<blendmodes name="zoom blend" description="缩放过渡"  blend="ZOOMBLEND(2.0, 2.0, easeInOutSine)" />
+
+    <!--热点文字-->
+    <action name="add_all_the_time_tooltip">
+        txtadd(tooltipname, 'tooltip_', get(name));
+        addplugin(get(tooltipname));
+        txtadd(plugin[get(tooltipname)].parent, 'hotspot[', get(name), ']');
+        set(plugin[get(tooltipname)].url,'%SWFPATH%/plugins/textfield.swf');
+        set(plugin[get(tooltipname)].align,top);
+        set(plugin[get(tooltipname)].edge,bottom);
+        set(plugin[get(tooltipname)].x,0);
+        set(plugin[get(tooltipname)].y,0);
+        set(plugin[get(tooltipname)].autowidth,true);
+        set(plugin[get(tooltipname)].autoheight,true);
+        set(plugin[get(tooltipname)].vcenter,true);
+        set(plugin[get(tooltipname)].background,true);
+        set(plugin[get(tooltipname)].backgroundcolor,0x000000);
+        set(plugin[get(tooltipname)].roundedge,5);
+        set(plugin[get(tooltipname)].backgroundalpha,0.65);
+        set(plugin[get(tooltipname)].padding,2);
+        set(plugin[get(tooltipname)].border,false);
+        set(plugin[get(tooltipname)].glow,0);
+        set(plugin[get(tooltipname)].glowcolor,0xFFFFFF);
+        set(plugin[get(tooltipname)].css,'text-align:center; color:#FFFFFF; font-family:MicrosoftYahei;font-size:30px;');
+        if(device.mobile,set(plugin[get(tooltipname)].css,'text-align:center; color:#FFFFFF; font-family:MicrosoftYahei; font-weight:bold; font-size:50px;');
+        );
+        set(plugin[get(tooltipname)].textshadow,0);
+        set(plugin[get(tooltipname)].textshadowrange,6.0);
+        set(plugin[get(tooltipname)].textshadowangle,90);
+        if(text == '' OR text === null,
+        copy(plugin[get(tooltipname)].html,
+        scene[get(linkedscene)].title),
+        copy(plugin[get(tooltipname)].html,text)
+        );
+        set(plugin[get(tooltipname)].enabled,false);
+    </action>
+
+    <!-- 启动加载第一个场景 -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+		set(layer[skin_title_pr].html,get(title));
+	</action>
+
+	<scene name="scene_bird_see" title="鸟瞰" onstart="" havevrimage="true" thumburl="panos/bird_see.tiles/thumb.jpg" lat="" lng="" heading="">
+		<view hlookat="-8" vlookat="30" fovtype="MFOV" fov="120.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" fisheye="2.0"/>
+		<preview url="panos/bird_see.tiles/preview.jpg" />
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="2560" tiledimageheight="2560">
+				<cube url="panos/bird_see.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/bird_see.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/bird_see.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<image if="webvr.isenabled">
+			<cube url="panos/bird_see.tiles/vr/pano_%s.jpg" />
+		</image>
+		<!-- 热点 -->
+		<!--<hotspot name="spot1" style="tooltip" distorted="true" ath="0.204" atv="22.691" tooltip="保利·西江月" url="skin/LOGO100.png" onload="add_all_the_time_tooltip_for_VR()"/>-->
+		<hotspot name="spot1" style="hotspotstyle1" distorted="true" ath="0.714" atv="23.138" text="保利·西江月" onload="add_all_the_time_tooltip_for_VR()"/>
+		<hotspot name="spot2" style="hotspotstyle2" distorted="true" ath="-10.628" atv="45.597" text="盛唐会所" onclick="openurl('../HSrenshi/tour.html',_blank);" onload="add_all_the_time_tooltip_for_VR()"/>
+	</scene>
+
+
+	<!--自动旋转设置：waittime:旋转等待时间 	speed：旋转速度		horizon：自动旋转的目标位置		tofov：旋转中达到的视场角-->
+    <autorotate enabled="true" waittime="5.0" speed="3.0" horizon="0.0" tofov="120.0" />
+	<!-- 旋转一圈后加载下一个场景 -->
+	<events onautorotateoneround="blend_to_next_scene_during_autorotation()" />
+</krpano>

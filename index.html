@@ -1,89 +1,467 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>博慧斯数据管理平台</title>
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-table.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/index.css">
+    <!-- 网页编码-->
+    <meta charset="utf-8">
+    <!-- 如果是 IE浏览器 使用 最新的引擎来渲染页面 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--视口约束-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>保利西江月·微沙盘</title>
+    <!-- CSS 外联 -->
+    <link rel="stylesheet" href="lib/css/base.css"/>
+	<link rel="stylesheet" href="lib/css/animate.css">
+	<!-- 小图标 -->
+    <link rel="icon" type="image/ico" href="http://www.alphavisual.cn/favicon.ico" />
+    <script src="lib/js/jquery-1.11.2.min.js"></script>
+    <script src='http://res.wx.qq.com/open/js/jweixin-1.2.0.js'></script>
+    <style>
+		html,body{
+			margin: 0;
+			padding: 0;
+			position: relative;
+		}
+		
+		.home_page{
+			background-image:url('img/bgimg/bgimg3.png'),url('img/bgimg/bgimg4.png');
+			background-repeat:no-repeat;
+			background-size:100% 100%;
+			-moz-background-size:100% 100%;
+			width: 100%;
+			height: 100%;
+			max-width: 640px;
+			max-height: 1008px;
+			margin: 0 auto;
+			box-shadow: 0 0 70px #000;
+			position: relative;
+			box-sizing: border-box;
+			overflow:hidden;
+       }
+		.xjy_logo{
+			width: 100%;
+			height: 15%;
+			position: relative;
+			top: 10%;
+		}
+		/*右边菜单淡入*/
+		.fade-in-right1 {
+			transition: 1s;
+			opacity: 1 !important;
+			right: 5% !important;
+		}
+		.fade-in-right2 {
+			transition: 1.5s;
+			opacity: 1 !important;
+			right: 5% !important;
+		}
+		.fade-in-right3 {
+			transition: 2.0s;
+			opacity: 1 !important;
+			right: 5% !important;
+		}
+		.fade-in-right4 {
+			transition: 2.5s;
+			opacity: 1 !important;
+			right: 5% !important;
+		}
+		.fade-in-right5 {
+			transition: 3.0s;
+			opacity: 1 !important;
+			right: 5% !important;
+		}
+       .btn_right{
+		position: absolute;
+       		top: 25%;
+       		right: 5%;
+       		height: 150px;
+       		width: 30px;
+       }
+       .btn_right li{
+       		width: 25px;
+       		height: 25px;
+       		margin-top: 10px;
+		    opacity: 0;
+       }
+	   .btn_right li a{
+		   width: 100%;
+		   height: 100%;
+	   }
+		/*下边菜单淡入*/
+       .btn_bottom{
+       		position: absolute;
+       		width: 100%;
+		  	height: 16%;
+		   	bottom: 0%;
+       }
+       .btn_bottom li {
+       		float: left;
+       		width: 25%;
+       		height: 100%;
+		   	box-sizing: border-box;
+		    text-align: center;
+		    padding:6% 5% ;
+       }
+	   .btn_bottom li a {
+		   display: block;
+		   width: 100%;
+		   height: 100%;
+	   }
+       img {
+	       	width: 100%;
+	       	height: 100%;
+       }
+	   .bird {
+		   width: 100%;
+		   height: 40%;
+		   opacity: 0;
+	   }
+	   .bird_show{
+		   transition: 3s;
+		   opacity: 1 ;
+		}
+       .text {
+			width: 100%;
+			height: 67%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+		}
+        .slogan{
+            width: 100%;
+            height: 5%;
+            position: absolute;
+            top: 68%;
+            text-align: center;
+            font-family: "Adobe 宋体 Std L" ;
+            font-weight: bolder;
+            font-size: 12px;
+            color: #f4e2c4;
+        }
+        .quan{
+            width: 100%;
+            height: 10px;
+            position: absolute;
+            top: 79%;
+	    text-align: center;
+        }
+	.quan img{
+	     width:74px;
+	     
+	}
+       .txt1{
+           width: 100%;
+           height: 100%;
+           margin-top: 2%;
+           font-size: 12px;
+       }
+       .txt2{
+           width: 100%;
+           height: 100%;
+           font-size: 10px;
+       }
+       .txt2 span{
+           margin: 0 3px;
+       }
+       .text_show{
+			transition: 5s;
+			opacity: 1 ;
+		}
+       .voice {
+            background-image: url(img/btn/voice.png);
+            background-size: 25px 25px;
+            background-position: 0px 0px;
+        }
+       .phone{
+            -webkit-animation: Tada 3s both infinite;
+            -moz-animation: Tada 3s both infinite;
+            -ms-animation: Tada 3s both infinite;
+            animation: Tada 3s both infinite;
+		}
+        @-webkit-keyframes Tada{
+            0% {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+            70%,73% {
+                -webkit-transform: scale(0.9) rotate(-3deg);
+                transform: scale(0.9) rotate(-3deg)
+            }
+            77%,83%,90%,97% {
+                -webkit-transform: scale(1.1) rotate(3deg);
+                transform: scale(1.1) rotate(3deg)
+            }
+            80%,87%,93% {
+                -webkit-transform: scale(1.1) rotate(-3deg);
+                transform: scale(1.1) rotate(-3deg)
+            }
+            100% {
+                -webkit-transform: scale(1) rotate(0);
+                transform: scale(1) rotate(0)
+            }
+        }
+
+        @-moz-keyframes Tada{
+            0% {
+                -moz-transform: scale(1);
+                transform: scale(1)
+            }
+            70%,73% {
+                -moz-transform: scale(0.9) rotate(-3deg);
+                transform: scale(0.9) rotate(-3deg)
+            }
+            77%,83%,90%,97% {
+                -moz-transform: scale(1.1) rotate(3deg);
+                transform: scale(1.1) rotate(3deg)
+            }
+            80%,87%,93%{
+                -moz-transform: scale(1.1) rotate(-3deg);
+                transform: scale(1.1) rotate(-3deg)
+            }
+            100% {
+                -moz-transform: scale(1) rotate(0);
+                transform: scale(1) rotate(0)
+            }
+        }
+
+        @-ms-keyframes Tada {
+            0% {
+                -ms-transform: scale(1);
+                transform: scale(1)
+            }
+            70%,73% {
+                -ms-transform: scale(0.9) rotate(-3deg);
+                transform: scale(0.9) rotate(-3deg)
+            }
+            77%,83%,90%,97% {
+                -ms-transform: scale(1.1) rotate(3deg);
+                transform: scale(1.1) rotate(3deg)
+            }
+            80%,87%,93% {
+                -ms-transform: scale(1.1) rotate(-3deg);
+                transform: scale(1.1) rotate(-3deg)
+            }
+            100% {
+                -ms-transform: scale(1) rotate(0);
+                transform: scale(1) rotate(0)
+            }
+        }
+
+        @keyframes Tada {
+            0% {
+                transform: scale(1);
+                transform: scale(1)
+            }
+            70%,73%{
+                transform: scale(0.9) rotate(-3deg);
+                transform: scale(0.9) rotate(-3deg)
+            }
+            77%,83%,90%,97%  {
+                transform: scale(1.1) rotate(3deg);
+                transform: scale(1.1) rotate(3deg)
+            }
+            80%,87%,93%{
+                transform: scale(1.1) rotate(-3deg);
+                transform: scale(1.1) rotate(-3deg)
+            }
+            100% {
+                transform: scale(1) rotate(0);
+                transform: scale(1) rotate(0)
+            }
+        }
+
+    </style>
 </head>
 
-<body>
-<header>
-    <h1><a href="#">博慧斯</a></h1>
-    <ul class="menu">
-        <li class="ck"><a href="#"><div class="menu-1"></div>
-            <br/>首页</a></li>
-        <li><a href="dataAna.html"><div class="menu-2"></div>
-            <br/>数据分析</a></li>
-        <li><a href="misMap.html"><div class="menu-3"></div>
-            <br/>糖化中国</a></li>
-        <li><a href="savePage.html"><div class="menu-4"></div>
-            <br/>系统设置</a></li>
-    </ul>
-    <ul class="login">
-        <li><a href="#"><img src="images/login-01.png" alt="">&nbsp;管理员登录&nbsp;</a></li>
-        <li><a href="#"><img src="images/login-02.png" alt="">&nbsp;退出&nbsp;</a></li>
-    </ul>
-</header>
-<div class="main">
-    <h3>检测信息列表: </h3>
-    <div class="box">
-        <input type="text" id="search_01" placeholder="请输入仪器编号"/>
-        <a href="javascript:;" class="btn btn-primary" id="search_02">搜索</a>
-        <br><br>
-        <table id="msiId"></table>
-    </div>
-    <div class="modal fade" id="clickId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">编辑信息</h4>
-                </div>
-                <div class="modal-body">
-                    <form id="teacherFormId">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="" id="name" placeholder="请输入姓名">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="" id="sex" placeholder="请输入性别">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="" id="year" placeholder="请输入年龄">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="" id="h" placeholder="请输入身高">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="" id="w" placeholder="请输入体重">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="" id="phone" placeholder="请输入联系方式">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="" id="c" placeholder="请输入糖尿病类型">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="" id="people" placeholder="请输入服务人员">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" id="button_closeId">关闭</button>
-                    <button type="button" class="btn btn-primary" id="button_saveId">保存</button>
-                </div>
-            </div>
+<body scroll="no">
+    <!-- 首页 -->
+    <div class="home_page">
+		<div class="bird">
+			<img src="img/bgimg/bgimg1.png" alt="">
+		</div>
+		<div class="text">
+			<img src="img/bgimg/bgimg2.png" alt=""/>
+		</div>
+		<div class="slogan animated fadeIn">
+			<p class="txt1">
+                <span>晋&nbsp;&nbsp;阳&nbsp;&nbsp;湖&nbsp;&nbsp;畔</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>奥&nbsp;&nbsp;体&nbsp;&nbsp;中&nbsp;&nbsp;央</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>盛&nbsp;&nbsp;唐&nbsp;&nbsp;院&nbsp;&nbsp;落</span>
+            </p>
+		    <P class="txt2">
+                <span>院</span><span>内</span><span>见</span><span>中</span><span>国</span>
+                <span style="margin: 0">·</span>
+                <span>院</span><span>外</span><span>享</span><span>世</span><span>界</span>
+            </P>
         </div>
+		<div class="xjy_logo animated fadeIn">
+			<img id="logo" src="img/xiy_logo/1.png" alt="">
+		</div>
+        <div class="quan">
+            <img src="img/bgimg/quan.png" alt="">
+        </div>
+    	<div class="btn_right">
+    		<ul>
+    			<audio src="./music/shiwai.mp3" id="music" autoplay="autoplay"></audio>
+    			<li class="voice" style="margin-top: 0px"></li>
+    			<li class="phone"><a href="tel://0351-6128888"><img src="img/btn/phone.png" alt="电话" title="联系我们" /></a></li>
+    			<li class="location"><a href="Map/map.html"><img src="img/btn/location.png" alt="地图" title="地理位置" /></a></li>
+    			<li class="Booking_room"><a href="http://www.alphavisual.cn:8080/Xijiangyue/admin/YYkanfang/YYkanfang.html"><img src="img/btn/Booking_room.png" alt="预约看房" title="预约看房"/></a></li>
+    			<li class="introduce"><a href="calculator/index.html"><img src="img/btn/calculator.png" alt="房贷计算" title="房贷计算"/></a></li>
+    		</ul>
+    	</div>
+		<ul class="btn_bottom animated fadeIn">
+			<li class="VRsand_table_btn"><a href="Niaokan/tour.html"><img src="img/btn/VRsand_table.png" alt="VR沙盘" /></a></li>
+			<li class="Unit_appraisal_btn"><a href="HXjianshang/HXjianshang.html"><img src="img/btn/Unit_appraisal.png" alt="户型品鉴" /></a></li>
+			<li class="electron_book_btn"><a href="DZloushu/book.html"><img src="img/btn/electron_book.png" alt="电子楼书" /></a></li>
+			<li class="brand_story_btn"><a href="PPgushi/story.html"><img src="img/btn/brand_story.png" alt="品牌故事" /></a></li>
+		</ul>
     </div>
-</div>
-<script src="lib/bootstrap/js/jquery-1.12.4.js"></script>
-<script src="lib/bootstrap/js/bootstrap.js"></script>
-<script src="lib/bootstrap/js/bootstrap-table.js"></script>
-<script src="lib/bootstrap/js/bootstrap-table-zh-CN.js"></script>
-<script src="js/index.js"></script>
-</body>
+	<!--JS文件-->
+    <script>
+        window.onload=function(){
+            isAndroid();
+            donghua();
+            isIos();
+            isPc();
+            Init();
+		}
 
+        //动画
+        function donghua(){
+            $('.voice').addClass('fade-in-right1');
+            $('.phone').addClass('fade-in-right2');
+            $('.phone').addClass('');
+            $('.location').addClass('fade-in-right3');
+            $('.Booking_room').addClass('fade-in-right4');
+            $('.introduce').addClass('fade-in-right5');
+            $('.bird').addClass('bird_show');
+            $('.text').addClass('text_show');
+        };
+
+        //安卓声音
+       	function voice(){
+       	    var voice=document.getElementById("music");
+        	//播放
+			//voice.play();
+        	//判断播放状态
+			$(".voice").click(function(){
+				if(voice.paused){
+					//在暂停状态 就播放
+					voice.play();
+                    $(".voice").css("backgroundImage","url(img/btn/voice.png)");
+				}else{
+					//播放状态 就暂停
+					voice.pause();
+                    $(".voice").css("backgroundImage","url(img/btn/closeVoice.png)");
+				}
+			});
+       	};
+        function isAndroid(){
+            var u = navigator.userAgent;
+            var Android = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+            if(Android)
+                voice();
+        };
+
+
+		//苹果声音
+        function bf(){
+            var audio = document.getElementById('music');
+            if(audio!==null){
+				$(".voice").click(function(){
+                    if(!audio.paused){
+                        // 这个就是暂停
+                        audio.pause();
+                        $(".voice").css("backgroundImage","url(img/btn/closeVoice.png)");
+                    }else{
+                        // 这个就是播放
+                        audio.play();
+                        $(".voice").css("backgroundImage","url(img/btn/voice.png)");
+                    }
+				})
+            }
+        };
+       	function isIos(){
+            var u = navigator.userAgent;
+            var ios = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+			if(ios) {
+                bf();
+			}
+		};
+
+		//PC声音
+		function isPc(){
+            var u = navigator.userAgent;
+            var Android = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+            var ios = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+		    if (Android == ios){
+		        voice();
+			}
+		};
+
+        /*定时器做图片的自动切换*/
+        function Init(){
+            var Num = 1;
+            var timer = setInterval(function(){
+                var imgObj = document.getElementById("logo")
+                imgObj.src = "img/xiy_logo/" + Num + ".png";
+                Num++;
+                //总共有14张图片，显示第14张图片时，teacherNum=14
+                //第14张图片显示后，执行teacherNum++,teacherNum=14
+                if (Num > 14){
+                   clearInterval(timer);
+                }
+			},200)
+        }
+
+        wx.config({
+            debug: false, //调试阶段建议开启
+            appId: "APPID",//APPID
+            timestamp: "timestamp",//上面main方法中拿到的时间戳timestamp
+            nonceStr: "nonceStr",//上面main方法中拿到的随机数nonceStr
+            signature: "signature",//上面main方法中拿到的签名signature
+            jsApiList: ["onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo","onMenuShareQZone"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+        wx.onMenuShareTimeline({
+            title: window.document.title, // 分享标题
+            desc : '晋阳湖畔 奥体中央 盛唐院落',
+            link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: 'http://www.alphavisual.cn/xjy/img/share.jpg' // 分享图标
+        });
+        //获取“分享给朋友”按钮点击状态及自定义分享内容接口
+        wx.onMenuShareAppMessage({
+            title: window.document.title, // 分享标题
+            desc: '晋阳湖畔 奥体中央 盛唐院落', // 分享描述
+            link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: 'http://www.alphavisual.cn/xjy/img/share.jpg' // 分享图标
+        });
+        //获取“分享到QQ”按钮点击状态及自定义分享内容接口
+        wx.onMenuShareQQ({
+            title: window.document.title, // 分享标题
+            desc: '晋阳湖畔 奥体中央 盛唐院落', // 分享描述
+            link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: 'http://www.alphavisual.cn/xjy/img/share.jpg' // 分享图标
+        });
+        //获取“分享到腾讯微博”按钮点击状态及自定义分享内容接口
+        wx.onMenuShareWeibo({
+            title: window.document.title, // 分享标题
+            desc: '晋阳湖畔 奥体中央 盛唐院落', // 分享描述
+            link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: 'http://www.alphavisual.cn/xjy/img/share.jpg' // 分享图标
+        });
+        //获取“分享到QQ空间”按钮点击状态及自定义分享内容接口
+        wx.onMenuShareQZone({
+            title: window.document.title, // 分享标题
+            desc: '晋阳湖畔 奥体中央 盛唐院落', // 分享描述
+            link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            imgUrl: 'http://www.alphavisual.cn/xjy/img/share.jpg' // 分享图标
+        });
+    </script>
+</body>
 </html>
+
+
+
+
+

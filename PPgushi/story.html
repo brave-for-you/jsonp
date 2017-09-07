@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>西江月-品牌故事</title>
+    <link rel="icon" type="image/ico" href="http://www.alphavisual.cn/favicon.ico" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../lib/css/swiper.min.css">
+    <link rel="stylesheet" href="../lib/css/animate.css">
+    <script src="../lib/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="../lib/js/swiper.min.js" type="text/javascript"></script>
+    <script src="../lib/js/swiper.animate.min.js"></script>
+    <style media="screen">
+	    *{padding: 0; margin: 0; border: 0;}
+        html,body{ font-family:"仿宋";font-size: 10px;color: #452d21;}
+        html, body {position: relative; width:100%;height: 100%;max-width: 640px;max-height: 1008px;margin: 0 auto; box-shadow: 0 0 70px #000;font-size: 12px;}
+	    ul{list-style:none;}
+	    .swiper-main{background-color: #fff; width:100%; height:100%; max-width: 640px; max-height: 1008px; margin:0 auto; box-shadow: 0 0 70px #fff;}
+	    .swiper-slide{color: #fff; width:100%; height:100%; position: relative;  }
+	    .page01{background: url('../img/bgimg/qywh_bgimg.png'); background-size:100% 100%; background-repeat:no-repeat;color: #0f0f0f;position: relative;}
+       	 	
+	    .sm-icon{box-sizing: border-box; display: block; width:40px; height:40px; padding:5px; border-radius:50%; position: absolute; z-index: 99;  }
+	    .sm-icon .icon-img{width: 30px; height: 30px;}
+	    #back{right: 1%; top: 5%;}
+	    .backimg{background: url('../img/back_hei.png'); background-size:cover;}
+        h3{color: #543729;width: 100%;text-align: center;margin-top: 10%}
+        .txt{text-indent: 2rem;margin: 0 35px;color: #452d21;margin-top: 10px;}
+     
+    </style>
+</head>
+<body>
+    <div class="swiper-container swiper-main">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide page01"  data-hash="page01">
+                <h3>城市运营者央企保利 文化地产助力区域发展</h3>
+                <div class="txt">
+                    保利地产，成立于1992年，是中国保利集团控股的大型国有上市房地产企业，国家一级房地产开发资质企业。公司直属国资委管理，具有央企、国企和军企三重背景，作为央企第一地产品牌，秉承“和者筑善”理念，以26载70城布局全国。
+                </div>
+                <div class="txt" style="margin-top: 0px">
+                    保利地产入晋四载，秉承责任地产、文化地产的身份，始终站在城市运营者的角度，积极响应城市发展和政府号召，成功开发多个品质楼盘，践行央企责任，助力城市发展。
+                    2017年保利地产响应政府号召进驻晋阳湖片区，依托自身丰富的城市运营经验及文化运营背景，开启保利世界湖居计划。从区域发展、宜居环境、环保节能、精神文明建设等角度，助力晋阳湖区域改造转型发展。
+                    目前保利已经在晋阳湖东岸开发了保利西江月和保利西湖林语两个优质项目，晋阳湖双盘以凤眼龙珠之势开启太原湖居时代。
+                    并与山西政府就“晋阳湖西岸打造保利文化创意产业园”项目签署相关意向协议。 
+                </div>
+		<div class="txt" style="margin-top: 0px">
+		    未来，保利还将持续的在晋阳湖区域进行可持续的城市生态发展建设，为晋阳湖片区打造更多、更好的多元化优质项目，同时开启各项契合区域传承的文化活动，以央企实力与责任助力区域发展。
+     		</div>          
+            </div>
+          
+        </div>
+    </div>
+    <!--返回按钮-->
+    <div id="back" class="sm-icon">
+        <a href="../index.html">
+            <div class="icon-img backimg"></div>
+        </a>
+    </div>
+</body>
+
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container',{
+        effect: 'fade',
+        // 变手势
+        grabCursor : true,
+        zoom : true,
+        // 滑动方向，水平horizontal，垂直vertical
+        direction:'vertical',
+        // 这个设定会在Wrapper上添加等于slides相加的宽高
+        setWrapperSize :true,
+        pagination : '.swiper-pagination',
+        paginationClickable :true,
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+            swiperAnimateCache(swiper); //隐藏动画元素
+            swiperAnimate(swiper); //初始化完成开始动画
+        },
+        onSlideChangeEnd: function(swiper){
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+        }
+    });
+</script>
+</html>

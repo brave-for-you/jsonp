@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>保利西江月-盛唐会所</title>
+    <link rel="icon" type="image/ico" href="http://www.alphavisual.cn/favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="../lib/css/bootstrap.min.css"/>
+	<script src="../lib/js/jquery-1.11.2.min.js"></script>
+	<script src="../lib/js/bootstrap.min.js"></script>
+	<style>
+		@-ms-viewport { width:device-width; }
+		@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body {
+			height:100%;
+			overflow:hidden;
+			margin:0;
+			padding:0;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:16px;
+			color:#FFFFFF;
+			background-color:#000000;
+		}
+        ol,ul {
+            list-style:none;
+        }
+        li{
+            list-style-type:none;
+        }
+        #menu{
+            opacity: 0;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 5%;
+            right: 0%;
+        }
+        #right-menu {
+            width: 30px;
+            position: absolute;
+            right: 0;
+            top: 10%;
+            opacity: 0;
+            list-style: none;
+            padding-left: 0px;
+        }
+        #right-menu li {
+            width: 30px;
+            height: 30px;
+            background-size: 30px 30px;
+            margin: 8px auto;
+        }
+        #right-menu a {
+            display: block;
+            height: 100%;
+        }
+        #back{
+            background-image: url(../img/back.png);
+            background-size: 30px 30px;
+        }
+        #bgm-switch {
+            background-image: url(../img/bg-music.png);
+            background-size: 30px 60px;
+            background-position: 0 	0px;
+        }
+        #gyro-switch {
+            background-image: url(../img/gyro.png);
+            background-size: 30px 60px;
+            background-position: 0 0px;
+        }
+        #autorotate-switch {
+            background-image: url(../img/autorotate.png);
+            background-size: 30px 60px;
+            background-position: 0 0px;
+        }
+        #vr-switch {
+            background-image: url(../img/vr-on.png);
+            background-size: 30px 30px !important;
+        }
+        /*----------------------模态框----------------------*/
+        #info {
+            background-image: url(../img/btn-share.png);
+            background-size: 30px 30px !important;
+        }
+        .row{
+            color: #0f0f0f;
+            font-size: 14px;
+            text-indent: 2rem;
+        }
+        #share{
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        /*右边菜单淡入淡出*/
+        .fade-in-right {
+            transition: 1s;
+            opacity: 1 !important;
+            right: 2% !important;
+        }
+        .fade-out-right {
+            transition: 0.5s;
+            opacity: 0 !important;
+            right: -2% !important;
+        }
+	</style>
+</head>
+<body>
+
+<script src="tour.js"></script>
+
+<div id="pano" style="width:100%;height:100%;">
+	<noscript>
+        <table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table>
+    </noscript>
+	<script>
+		embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+	</script>
+</div>
+
+<!--右边控制菜单-->
+<div id="menu">
+    <img src="../img/menu.png" title="展开/收起">
+</div>
+<ul id="right-menu">
+    <li><a id="back" href="../index.html"></a></li>
+    <li><a id="bgm-switch" href="#"><audio src="../music/bgm2.mp3" id="bg-music"></audio></a></li>
+    <li><a id="gyro-switch" href="#"></a></li>
+    <li><a id="autorotate-switch" href="#"></a></li>
+    <li><a id="vr-switch" href="#"></a></li>
+    <li><a id="info" href="#" data-toggle="modal" data-target="#myModal"></a></li>
+</ul>
+<!--信息模态框-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="myModal" style="z-index: 9999;">
+    <div class="modal-dialog" role="document" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header" >
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <span style="color: #353535;font-size: 18px; font-weight: bolder; overflow: hidden; text-shadow: 2px 3px 2px #dadada">项目简介</span>
+            </div>
+            <div class="modal-body" style="overflow: scroll">
+                <div class="row" >
+                    <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4 col-md-offset-3" id="share">
+                        <p style="vertical-align:bottom">
+                            <span style="font-size: 18px;color: #e9b051;">保利西江月</span>
+                            项目位于<span>山西太原晋源区晋阳湖板块</span>,周边自然资源丰富，以<span>晋阳湖公园、奥体中心、晋祠公园、蒙山大佛</span>等为代表，<span>是当前城市规划的最热区域</span>，2019年青奥会的举办，
+                            <span>会使区域成为全国认识太原的窗口。</span>
+                        </p>
+                    </div>
+                    <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4 col-md-offset-3" style="width: 100%;height: 100%;margin: 0 auto;">
+                        <p style="vertical-align:bottom">
+                            项目风格为<span>盛唐风格</span>，既能变现地块与城市历史的演变，又能成为目标客群的交流中心，达到脱颖而出，区隔竞品，具有强烈的视觉冲击感和可识别性。
+                        </p>
+                    </div>
+                    <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4 col-md-offset-3" style="width: 100%;height: 100%;margin: 0 auto;">
+                        <p style="vertical-align:bottom">
+                            保利西江月项目不仅要树立太原豪宅品质标杆，更承载着品牌在太原的形象展现，承载着作为央企，保利与政府共建城市文化、树立城市风貌的社会责任。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="script.js"></script>
+</html>
